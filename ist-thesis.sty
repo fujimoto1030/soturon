@@ -1,0 +1,198 @@
+\topmargin -12mm
+\oddsidemargin 6mm\evensidemargin\oddsidemargin
+\textwidth 160mm
+\textheight 245mm
+
+%\footskip 15mm
+\def\baselinestretch{1.23}
+\pagestyle{plain}
+
+%\def\chapter{\newpage\@startsection {chapter}{1}{\z@}{1.75ex plus .5ex minus 
+% .1ex}{1.25ex plus .1ex}{\large\bf}}
+%\def\section{\@startsection {section}{1}{\z@}{1.75ex plus .5ex minus 
+% .1ex}{1.25ex plus .1ex}{\normalsize\bf}}
+%\def\subsection{\@startsection{subsection}{2}{\z@}{1.6ex plus .5ex minus 
+% .1ex}{.75ex plus .1ex}{\normalsize\bf}}
+%\def\subsubsection{\@startsection{subsubsection}{3}{\z@}{1.6ex plus 
+% 1ex minus .1ex}{.75ex plus .1ex}{\normalsize\bf}}
+%\def\paragraph{\@startsection
+% {paragraph}{4}{\z@}{1.6ex plus .5ex minus .1ex}{-1em}{\normalsize\bf}}
+%\def\subparagraph{\@startsection
+% {subparagraph}{4}{\parindent}{1.6ex plus .5ex minus 
+% .1ex}{-1em}{\normalsize\bf}}
+
+
+\def\SMBOX#1#2{\newif\if最初\最初true\@tfor\文字:=#1\do{\if最初\最初false\else#2\fi\文字}}
+
+\def\thesistype#1{
+  \gdef\@thesistype{#1}
+\if B\@thesistype
+ \gdef\@thesistitle{卒業論文}
+ \gdef\@ethesistitle{Bachelor Thesis}
+ \gdef\@affiliation{関西学院大学 理工学部 情報科学科}
+ \gdef\@school{理工学部}
+ \gdef\@department{情報科学科}
+ \gdef\@IDprefix{2701}
+\else
+ \gdef\@thesistitle{修士論文}
+ \gdef\@ethesistitle{Master Thesis}
+ \gdef\@affiliation{関西学院大学 大学院理学研究科 情報科学専攻}
+ \gdef\@school{理工学研究科}
+ \gdef\@department{情報科学専攻}
+ \gdef\@IDprefix{4701}
+\fi
+}
+
+\def\title#1{\gdef\@title{#1}}
+\def\etitle#1{\gdef\@etitle{#1}}
+\def\ID#1{\gdef\@ID{#1}}
+\def\author#1{\gdef\@author{#1}}
+\def\eauthor#1{\gdef\@eauthor{#1}}
+\def\supervisor#1{\gdef\@supervisor{#1}}
+\def\esupervisor#1{\gdef\@esupervisor{#1}}
+\def\yearmonth#1{\gdef\@yearmonth{#1}}
+\def\deadline#1{\gdef\@deadline{#1}}
+\long\def\abstract#1{\long\gdef\@abstract{#1}}
+\long\def\eabstract#1{\long\gdef\@eabstract{#1}}
+\def\keyword#1{\gdef\@keyword{#1}}
+\def\ekeyword#1{\gdef\@ekeyword{#1}}
+
+\def\coverpage{%
+\def\PAR{\par} %
+\thispagestyle{empty}
+
+%%%%%%%%%%% 表紙 %%%%%%%%%%%%%
+\begin{center}
+\Huge
+\vspace*{0.6em}
+%\@school\par
+\let\xSMBOX=\relax\edef\DO{\xSMBOX{\@school}{~}}\let\xSMBOX=\SMBOX\DO\par
+\vspace*{1.45em}
+\@yearmonth\par
+\vspace*{1.45em}
+\let\xSMBOX=\relax\edef\DO{\xSMBOX{\@thesistitle}{~}}\let\xSMBOX=\SMBOX\DO\par
+\vspace*{4.75em}
+\@title\par
+\vspace*{4.75em}
+\@IDprefix\@ID~~%
+\let\xSMBOX=\relax\edef\DO{\xSMBOX{\@author}{~}}\let\xSMBOX=\SMBOX\DO\par
+\vspace*{1.45em}
+(\let\xSMBOX=\relax\edef\DO{\xSMBOX{\@department}{~}}\let\xSMBOX=\SMBOX\DO)
+%(\@department)
+%\vfill
+\end{center}
+%%%%%%%%%%% 表紙終わり %%%%%%%%%%%%%
+
+
+%.%%%%%%%%%%% 卒論の表紙 %%%%%%%%%%%%%
+%.\if B\@thesistype
+%.\begin{center}
+%.\LARGE
+%.~
+%.\vfill
+%.\@school\par
+%.\vspace*{1em}
+%.\@yearmonth\par
+%.\vspace*{1em}
+%.\let\xSMBOX=\relax\edef\DO{\xSMBOX{\@thesistitle}{~}}\let\xSMBOX=\SMBOX\DO%
+%.\par
+%.\vfill
+%.{\LARGE\@title}\par
+%.\vfill
+%.%{\LARGE\@ID~~\@author}\par
+%.{\LARGE\@IDprefix\@ID~~%
+%.\let\xSMBOX=\relax\edef\DO{\xSMBOX{\@author}{~}}\let\xSMBOX=\SMBOX\DO%
+%.}\par
+%.
+%.(\@department)
+%.\vfill
+%.\end{center}
+%.%%%%%%%%%%% 修論の表紙 %%%%%%%%%%%%%
+%.\else
+%.\begin{center}
+%.\LARGE
+%.~
+%.\vfill
+%.\@school\par
+%.\vspace*{1em}
+%.\@yearmonth\par
+%.\vspace*{1em}
+%.\let\xSMBOX=\relax\edef\DO{\xSMBOX{\@thesistitle}{~}}\let\xSMBOX=\SMBOX\DO%
+%.\par
+%.\vfill
+%.{\LARGE\@title}\par
+%.\vfill
+%.%{\LARGE\@ID~~\@author}\par
+%.{\LARGE\@IDprefix\@ID~~%
+%.\let\xSMBOX=\relax\edef\DO{\xSMBOX{\@author}{~}}\let\xSMBOX=\SMBOX\DO%
+%.}\par
+%.
+%.(\@department)
+%.\vfill
+%.\end{center}
+%.\fi
+%.%%%%%%%%%%% 表紙終わり %%%%%%%%%%%%%
+
+
+\cleardoublepage
+
+\def\PAR{} % 内容梗概やabstract ではタイトルを改行しない
+
+\pagenumbering{roman}
+\begin{flushleft}\@thesistitle\end{flushleft}
+\vspace*{2mm}
+\begin{flushleft}{\large \@title}\end{flushleft}
+\begin{flushright}\@author\end{flushright}
+\vspace*{2mm}
+\begin{flushleft}{\bf 内容梗概}\\ \end{flushleft}
+\vspace*{2mm}
+
+\@abstract
+\vspace*{5mm}
+\begin{flushleft}{\bf キーワード}\\ \end{flushleft}
+\@keyword
+
+
+%% 英文アブストはカットしています
+%% \begin{flushleft}\@ethesistitle\end{flushleft}
+%% \vspace*{2mm}
+%% \begin{flushleft}{\large \@etitle}\end{flushleft}
+%% \begin{flushright}\@eauthor\end{flushright}
+%% \vspace*{2mm}
+%% \begin{flushleft}{\bf Abstract}\\ \end{flushleft}
+%% \vspace*{2mm}
+%% \@eabstract
+%% \vspace*{5mm}
+%% \begin{flushleft}{\bf Keywords}\\ \end{flushleft}
+%% \@ekeyword
+}
+
+%\newcommand{\body}{\newpage\pagenumbering{arabic}}
+\newcommand{\body}{\cleardoublepage\pagenumbering{arabic}}
+\newcommand{\acknowledgement}{
+	\chapter*{謝辞\addcontentsline{toc}{chapter}{謝辞}}}
+\def\thebibliography#1{\chapter*{参考文献\@mkboth
+ {参 考 文 献}{参 考 文 献}\addcontentsline{toc}{chapter}{参考文献}}\list
+ {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11em plus .33em minus .07em}
+ \sloppy
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+\def\appendix{\@ifnextchar[{\@appendix}{\@appendix[]}}
+\def\@appendix[#1]{\chapter*{付録#1\addcontentsline{toc}{chapter}{付録#1}}}
+
+\title{●}
+\etitle{●}
+\ID{●}
+\author{●}
+\eauthor{●}
+\supervisor{●}
+\esupervisor{●}
+\deadline{●年●月●日}
+\yearmonth{●年●月}
+\abstract{●}
+\eabstract{●}
+\keyword{●}
+\ekeyword{●}

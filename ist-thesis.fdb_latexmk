@@ -1,0 +1,21 @@
+# Fdb version 3
+["pdflatex"] 1581743609 "ist-thesis.tex" "ist-thesis.pdf" "ist-thesis" 1581926162
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1480098830 1224 978390e9c2234eab29404bc21b268d1e ""
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/dvips.def" 1498170935 5895 4b59bd0c17e1116fd6b6e7c683dea655 ""
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty" 1523134385 15272 5a97061616e0c8b2aa79c6615ff769f4 ""
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty" 1523134385 9063 d0a305975932762117cd1f06a582f896 ""
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty" 1523134385 2591 6404d0c7d28505fb38ce0d86c2e28ae7 ""
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty" 1523134385 3977 cb9221976ed8a183afad65b59aa8629a ""
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty" 1523134385 13312 20cb94dd6e4c9ea3a77ebbd18724e5c4 ""
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/tools/tabularx.sty" 1523050425 7145 01b7b53bf69f5c0f63803657eb51217f ""
+  "/usr/local/texlive/2018/texmf-dist/tex/platex/base/jbook.cls" 1523134583 28571 98f0f48b3ac616da46ce0612752e10b4 ""
+  "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
+  "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1554697234 4220279 990a14fe2c6672fa60b2e77926086767 ""
+  "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
+  "ist-thesis.aux" 1581743609 8 a94a2480d3289e625eea47cd1b285758 ""
+  "ist-thesis.sty" 1575719142 5425 c7d73e720c5af244693b9231810eb6cd ""
+  "ist-thesis.tex" 1581743608 49897 670f3bf247edbc84664b0e64c23288e0 ""
+  (generated)
+  "ist-thesis.aux"
+  "ist-thesis.pdf"
+  "ist-thesis.log"

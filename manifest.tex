@@ -1,0 +1,101 @@
+\documentclass{jarticle}
+\topmargin -15mm\oddsidemargin -4mm\evensidemargin\oddsidemargin
+\textwidth 170mm\textheight 257mm\columnsep 7mm
+\pagestyle{empty}
+\renewcommand{\baselinestretch}{0.9}
+\renewcommand{\arraystretch}{1.0}
+
+\usepackage{txfonts}
+\usepackage{bm}
+\usepackage{boxedminipage}
+\usepackage{multicol}
+\usepackage[dvipdfmx]{graphicx}
+
+\makeatletter
+\def\@trivlist{\topsep 2pt \parsep 2pt plus \parskip \partopsep 0pt
+\itemsep 0pt \@topsepadd\topsep \if@noskipsec \leavevmode \fi
+\ifvmode \advance\@topsepadd\partopsep \else \unskip\par\fi
+\if@inlabel \@noparitemtrue \@noparlisttrue \else \@noparlistfalse
+\@topsep\@topsepadd \fi \advance\@topsep \parskip
+\leftskip\z@\rightskip\@rightskip \parfillskip\@flushglue
+\@setpar{\if@newlist\else{\@@par}\fi}%
+\global\@newlisttrue \@outerparskip\parskip}
+\makeatother
+
+\begin{document}
+
+\noindent
+\textbf{関西学院大学 理工学部 情報科学科  マニフェスト 藤本高史} \hfill 最終更新 2019年12月09日
+
+\bigskip\noindent
+\textbf{タイトル案} (5つ以上) % 修論や学会発表の場合は, 英語も必要
+
+\begin{itemize}
+ \item 機械学習を用いたファズデータのチェックサム及びハッシュ値の推定(決定)
+\end{itemize}
+
+\medskip\noindent
+\textbf{著者} % 修論や卒論の場合は, このセクション不要
+\begin{itemize}
+ \item[]
+ 藤本高史 (Takafumi Fujimoto)
+\end{itemize}
+
+\medskip\noindent
+\textbf{研究の位置づけ} (1.~背景;  2.~それに対する取り組み; 3.~課題; 4.~本研究)
+
+\begin{enumerate}
+
+ \item 近年のファジングツールにおいてファズデータ作成に用いられる変異ベース手法は,
+ チェックサムやハッシュにより入力データは殆ど通過しないため, 網羅率が低いことがあげられる.\par
+
+ \item {[難波2018]}は, 機械学習を用いて入力データに対するチェックサムの推定を行い, 68\%の正答率となった.
+
+ \item 8 byteデータに対するチェックサムのみの学習しか行っていないため, 汎用性に欠ける.
+
+ \item 機械学習を用いて, 8 byte以上の入力データに対するチェックサム及びハッシュ値の推定を行う.
+ \begin{itemize}
+  \item ハッシュ値はCRC16, CRC32, MD5, SHA1.\par
+  \item 可変長データに対応.\par
+ \end{itemize}
+\end{enumerate}
+
+\textbf{結果}
+\begin{itemize}
+ \item ランダム文字列と英文に対するチェックサムや各ハッシュ値において, 高精度で推定.\par
+\end{itemize}
+
+\begin{table}[htp]
+   \begin{center}
+    \caption{英文の学習精度}
+    \begin{tabular}{|r|r|r|r|r|}
+    \hline
+       & 学習データ & テストデータ & 学習誤差 & 推定誤差    \\ \hline　
+    checksum   & 72 \% & 72 \% & 0.66  & 0.66    \\ \hline
+    CRC16   & 57\% & 57\% & 0.57 & 0.57   \\ \hline
+    CRC32   & 53\% & 53\% & 0.65 & 0.65  \\ \hline
+    MD5  & 15\% & 15\% & 2.5  & 2.5    \\ \hline
+    SHA1    & 5\% & 5\% & 2.9  & 2.9    \\ \hline
+    \end{tabular}
+   \end{center}
+
+\end{table}
+
+\begin{table}[htp]
+   \begin{center}
+    \caption{ランダム文字列の学習精度}
+    \begin{tabular}{|r|r|r|r|r|}
+    \hline
+       & 学習データ & テストデータ & 学習誤差 & 推定誤差    \\ \hline
+    checksum   & 63\% & 63\% & 0.95 & 0.95   \\ \hline
+    CRC16   & 55\% & 55\% & 0.63 & 0.63   \\ \hline
+    CRC32   & 52\% & 52\% & 0.66 & 0.66   \\ \hline
+    MD5  & 5\% & 5\% & 3.09  & 3.09    \\ \hline
+    SHA1    & 5\% & 5\% & 3.07  & 3.07    \\ \hline
+    \end{tabular}
+   \end{center}
+
+\end{table}
+
+
+\end{document}
